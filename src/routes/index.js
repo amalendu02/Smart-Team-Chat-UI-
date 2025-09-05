@@ -1,6 +1,5 @@
 import { Suspense, lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
-
 // layouts
 import DashboardLayout from "../layouts/dashboard";
 
@@ -37,3 +36,5 @@ const GeneralApp = Loadable(
   lazy(() => import("../pages/dashboard/GeneralApp")),
 );
 const Page404 = Loadable(lazy(() => import("../pages/Page404")));
+
+

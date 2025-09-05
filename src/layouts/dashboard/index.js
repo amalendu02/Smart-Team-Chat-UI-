@@ -7,6 +7,7 @@ import { Nav_Buttons } from "../../data";
 import { Gear } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 import useSettings from "../../hooks/useSettings";
+import GeneralApp from "../../pages/dashboard/GeneralApp";
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 40,
@@ -177,8 +178,9 @@ const DashboardLayout = () => {
             <Avatar src={faker.image.avatar()} />
           </Stack>
         </Stack>
+        <Outlet />
       </Box>
-      <Outlet />
+      <GeneralApp />
     </>
   );
 };
