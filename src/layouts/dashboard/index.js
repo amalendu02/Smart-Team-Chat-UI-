@@ -56,9 +56,6 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-
-
-
 const DashboardLayout = () => {
   const theme = useTheme();
 
@@ -66,10 +63,11 @@ const DashboardLayout = () => {
 
   console.log(theme);
 
-  const {onToggleMode} = useSettings();
+  const { onToggleMode } = useSettings();
 
   return (
-    <>
+    <Stack direction="row">
+    <Box sx={{ display: "flex", height: "100vh" }}>
       <Box
         sx={{
           backgroundColor: theme.palette.background.paper,
@@ -178,10 +176,13 @@ const DashboardLayout = () => {
             <Avatar src={faker.image.avatar()} />
           </Stack>
         </Stack>
+        {/* <Outlet /> */}
+      </Box>
+      <Box sx={{ flex: 1 }}>
         <Outlet />
       </Box>
-      <GeneralApp />
-    </>
+    </Box>
+    </Stack>
   );
 };
 
